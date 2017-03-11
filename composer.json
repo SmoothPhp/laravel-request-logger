@@ -1,0 +1,30 @@
+{
+    "name": "smoothphp/laravel-request-logger",
+    "description": "Logs request data to S3, Mongo, etc",
+    "type": "library",
+    "keywords": [
+        "smoothphp",
+        "request logger",
+        "laravel"
+    ],
+    "homepage": "https://github.com/smoothphp/laravel-request-logger",
+    "require": {
+        "php": ">=7.0",
+        "jenssegers/mongodb": "^3.2",
+        "laravel/laravel": "^5.4"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jordan Crocker",
+            "email": "jordan@jcrocker.uk",
+            "homepage": "https://jcrocker.uk"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "SmoothPhp\\RequestLogger\\": "src"
+        }
+    },
+    "minimum-stability": "stable"
+}
