@@ -17,7 +17,8 @@
     },
     "require-dev": {
         "ext-mongodb": "*",
-        "jenssegers/mongodb": "^3.2"
+        "jenssegers/mongodb": "^3.2",
+        "illuminate/filesystem": "^5.3"
     },
     "license": "MIT",
     "authors": [
@@ -34,7 +35,8 @@
     },
     "suggest": {
         "ext-mongo": "Required to use the Mongo driver",
-        "jenssegers/mongodb": "Required to use the Mongo driver"
+        "jenssegers/mongodb": "Required to use the Mongo driver",
+        "illuminate/filesystem": "For file system request logging"
     },
     "minimum-stability": "stable"
 }
