@@ -3,7 +3,9 @@
 namespace SmoothPhp\RequestLogger;
 
 use Illuminate\Support\ServiceProvider;
+use MongoClient;
 use SmoothPhp\RequestLogger\Request\Adapter\DataStoreAdapter;
+use SmoothPhp\RequestLogger\Request\Adapter\FilesystemAdapter;
 use SmoothPhp\RequestLogger\Request\Adapter\MongoAdapter;
 use SmoothPhp\RequestLogger\Request\RequestStore;
 use SmoothPhp\RequestLogger\Request\Store;
@@ -11,7 +13,7 @@ use SmoothPhp\RequestLogger\Request\Store;
 /**
  * Class RequestLoggerServiceProvider
  * @package SmoothPhp\RequestLogger
- * @author jrdn hannah <jordan@hotsnapper.com>
+ * @author jrdn rc <jordan@jcrocker.uk>
  */
 final class RequestLoggerServiceProvider extends ServiceProvider
 {
@@ -37,7 +39,7 @@ final class RequestLoggerServiceProvider extends ServiceProvider
     {
         $app = $this->app;
 
-        if (class_exists(\MongoClient::class)) {
+        if (class_exists(MongoClient::class)) {
             $this->app->instance(
                 MongoAdapter::class,
                 new MongoAdapter(
@@ -46,15 +48,27 @@ final class RequestLoggerServiceProvider extends ServiceProvider
                 ));
         }
 
+        $this->app->instance(
+            FilesystemAdapter::class,
+            new FilesystemAdapter(
+                $this->app->make('filesystem')->disk($app['config']->get('request_logger.filesystem.disk')),
+                $app['config']->get('request_logger.filesystem.file_name_format')
+            )
+        );
+
         $this->app->bind(DataStoreAdapter::class, $app['config']->get('request_logger.enabled_adapter'));
         $this->app->bind(Store::class, RequestStore::class);
     }
 
+    /**
+     * @return array
+     */
     public function provides()
     {
         return [
             DataStoreAdapter::class,
             MongoAdapter::class,
+            FilesystemAdapter::class,
             RequestStore::class,
             Store::class,
         ];
