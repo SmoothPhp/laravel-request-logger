@@ -7,7 +7,7 @@ use Jenssegers\Mongodb\Connection;
 /**
  * Class MongoAdapter
  * @package SmoothPhp\RequestLogger\Request\Adapter
- * @author jrdn hannah <jordan@hotsnapper.com>
+ * @author jrdn rc <jordan@jcrocker.uk>
  */
 final class MongoAdapter implements DataStoreAdapter
 {
@@ -27,11 +27,13 @@ final class MongoAdapter implements DataStoreAdapter
     }
 
     /**
+     * @param string $ip
      * @param array $data
      * @return void
      */
-    public function store(array $data)
+    public function store(string $ip, array $data)
     {
+        $data['ip'] = $ip;
         $this->connection->collection($this->collection)->insert([$data]);
     }
 }
