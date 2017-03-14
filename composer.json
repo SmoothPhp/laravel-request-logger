@@ -10,8 +10,14 @@
     "homepage": "https://github.com/smoothphp/laravel-request-logger",
     "require": {
         "php": ">=7.0",
-        "jenssegers/mongodb": "^3.2",
-        "laravel/laravel": "^5.4"
+        "illuminate/bus": "^5.3",
+        "illuminate/routing": "^5.3",
+        "illuminate/queue": "^5.3",
+        "illuminate/support": "^5.3"
+    },
+    "require-dev": {
+        "ext-mongodb": "*",
+        "jenssegers/mongodb": "^3.2"
     },
     "license": "MIT",
     "authors": [
@@ -25,6 +31,10 @@
         "psr-4": {
             "SmoothPhp\\RequestLogger\\": "src"
         }
+    },
+    "suggest": {
+        "ext-mongo": "Required to use the Mongo driver",
+        "jenssegers/mongodb": "Required to use the Mongo driver"
     },
     "minimum-stability": "stable"
 }
