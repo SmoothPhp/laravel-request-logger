@@ -10,8 +10,9 @@ namespace SmoothPhp\RequestLogger\Request\Adapter;
 interface DataStoreAdapter
 {
     /**
+     * @param string $ip
      * @param array $data
      * @return void
      */
-    public function store(array $data);
+    public function store(string $ip, array $data);
 }

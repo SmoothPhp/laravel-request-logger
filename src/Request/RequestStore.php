@@ -23,11 +23,12 @@ final class RequestStore implements Store
     }
 
     /**
+     * @param string $ip
      * @param array $data
      * @return void
      */
-    public function log(array $data)
+    public function log(string $ip, array $data)
     {
-        $this->adapter->store($data);
+        $this->adapter->store($ip, $data);
     }
 }

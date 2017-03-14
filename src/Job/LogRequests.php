@@ -38,7 +38,7 @@ final class LogRequests implements ShouldQueue
             ]
         ];
 
-        $store->log($data);
+        $store->log($request->ip(), $data);
 
         $this->delete();
     }
