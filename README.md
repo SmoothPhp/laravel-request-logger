@@ -20,8 +20,8 @@ If you discover any security related issues, please email simon.bennett@smoothph
 
 ## Credits
 
-- [Simon Bennett][link-author]
-- [Jrdn](https://github.com/jrdnrc)
+- [Simon Bennett](https://github.com/mrsimonbennett)
+- [Jrdn][link-author]
 - [All Contributors][link-contributors]
 
 ## License
