@@ -3,12 +3,12 @@
 Provides middleware to log an HTTP request (in the background) to any number of services (MongoDB, S3, MySQL)
 
 ## To Do
-- Example adapters
-- Refine dependencies
-- Change some dependencies to "suggests"
-- Testing
-- Configuration (Queue, adapters)
-- Split into generic package and laravel package
+- [x] Example adapters
+- [x] Refine dependencies
+- [x] Change some dependencies to "suggests"
+- [ ] Testing
+- [x] Configuration (Queue, adapters)
+- [ ] Split into generic package and laravel package
 
 ## Contributing
 
