@@ -23,7 +23,7 @@ final class RequestLoggerServiceProvider extends ServiceProvider
     /**
      * Boot
      */
-    public function boot()
+    public function boot() : void
     {
         $this->publishes(
             [
@@ -35,7 +35,7 @@ final class RequestLoggerServiceProvider extends ServiceProvider
     /**
      * Register
      */
-    public function register()
+    public function register() : void
     {
         $app = $this->app;
 
@@ -63,7 +63,7 @@ final class RequestLoggerServiceProvider extends ServiceProvider
     /**
      * @return array
      */
-    public function provides()
+    public function provides() : array
     {
         return [
             DataStoreAdapter::class,

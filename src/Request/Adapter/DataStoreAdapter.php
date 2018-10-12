@@ -14,5 +14,5 @@ interface DataStoreAdapter
      * @param array $data
      * @return void
      */
-    public function store(string $ip, array $data);
+    public function store(string $ip, array $data) : void;
 }

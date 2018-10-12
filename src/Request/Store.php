@@ -14,5 +14,5 @@ interface Store
      * @param array $data
      * @return void
      */
-    public function log(string $ip, array $data);
+    public function log(string $ip, array $data) : void;
 }

@@ -31,7 +31,7 @@ final class MongoAdapter implements DataStoreAdapter
      * @param array $data
      * @return void
      */
-    public function store(string $ip, array $data)
+    public function store(string $ip, array $data) : void
     {
         $data['ip'] = $ip;
         $this->connection->collection($this->collection)->insert([$data]);
