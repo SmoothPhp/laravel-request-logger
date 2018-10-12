@@ -22,7 +22,7 @@ final class LogRequests implements ShouldQueue
      * @param Store  $store
      * @return void
      */
-    public function handle(Router $router, Store $store)
+    public function handle(Router $router, Store $store) : void
     {
         $route   = $router->getCurrentRoute();
         $request = $router->getCurrentRequest();

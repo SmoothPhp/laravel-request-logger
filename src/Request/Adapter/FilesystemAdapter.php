@@ -14,6 +14,7 @@ final class FilesystemAdapter implements DataStoreAdapter
 {
     /** @var Filesystem */
     private $filesystem;
+
     /** @var string */
     private $filenameFormat;
 
@@ -32,7 +33,7 @@ final class FilesystemAdapter implements DataStoreAdapter
      * @param array $data
      * @return void
      */
-    public function store(string $ip, array $data)
+    public function store(string $ip, array $data) : void
     {
         $this->filesystem->put(vsprintf('%s/%s.json', [
             $ip,
